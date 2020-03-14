@@ -1,4 +1,4 @@
-2020-03-14 05:12:40,724 INFO  [main] datanode.DataNode (LogAdapter.java:info(45)) - STARTUP_MSG: 
+2020-03-14 05:48:01,158 INFO  [main] datanode.DataNode (LogAdapter.java:info(45)) - STARTUP_MSG: 
 /************************************************************
 STARTUP_MSG: Starting DataNode
 STARTUP_MSG:   host = c74.localdomain/10.4.1.75
@@ -8,49 +8,66 @@ STARTUP_MSG:   classpath = /home/kshanka2/p1/hadoop/etc/hadoop:/home/kshanka2/p1
 STARTUP_MSG:   build = https://git-wip-us.apache.org/repos/asf/hadoop.git -r b165c4fe8a74265c792ce23f546c64604acf0e41; compiled by 'jenkins' on 2016-01-26T00:08Z
 STARTUP_MSG:   java = 1.8.0_121
 ************************************************************/
-2020-03-14 05:12:40,740 INFO  [main] datanode.DataNode (LogAdapter.java:info(45)) - registered UNIX signal handlers for [TERM, HUP, INT]
-2020-03-14 05:12:41,546 WARN  [main] impl.MetricsConfig (MetricsConfig.java:loadFirst(125)) - Cannot locate configuration: tried hadoop-metrics2-datanode.properties,hadoop-metrics2.properties
-2020-03-14 05:12:41,645 INFO  [main] impl.MetricsSystemImpl (MetricsSystemImpl.java:startTimer(377)) - Scheduled snapshot period at 10 second(s).
-2020-03-14 05:12:41,646 INFO  [main] impl.MetricsSystemImpl (MetricsSystemImpl.java:start(192)) - DataNode metrics system started
-2020-03-14 05:12:41,653 INFO  [main] datanode.BlockScanner (BlockScanner.java:<init>(172)) - Initialized block scanner with targetBytesPerSec 1048576
-2020-03-14 05:12:41,656 INFO  [main] datanode.DataNode (DataNode.java:<init>(427)) - Configured hostname is c74.localdomain
-2020-03-14 05:12:41,665 INFO  [main] datanode.DataNode (DataNode.java:startDataNode(1100)) - Starting DataNode with maxLockedMemory = 0
-2020-03-14 05:12:41,698 INFO  [main] datanode.DataNode (DataNode.java:initDataXceiver(898)) - Opened streaming server at /0.0.0.0:50010
-2020-03-14 05:12:41,701 INFO  [main] datanode.DataNode (DataXceiverServer.java:<init>(76)) - Balancing bandwith is 1048576 bytes/s
-2020-03-14 05:12:41,702 INFO  [main] datanode.DataNode (DataXceiverServer.java:<init>(77)) - Number threads for balancing is 5
-2020-03-14 05:12:41,820 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
-2020-03-14 05:12:41,832 INFO  [main] server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(284)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
-2020-03-14 05:12:41,841 INFO  [main] http.HttpRequestLog (HttpRequestLog.java:getRequestLog(80)) - Http request log for http.requests.datanode is not defined
-2020-03-14 05:12:41,849 INFO  [main] http.HttpServer2 (HttpServer2.java:addGlobalFilter(710)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
-2020-03-14 05:12:41,851 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(685)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context datanode
-2020-03-14 05:12:41,853 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(693)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
-2020-03-14 05:12:41,854 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(693)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
-2020-03-14 05:12:41,871 INFO  [main] http.HttpServer2 (HttpServer2.java:openListeners(915)) - Jetty bound to port 38813
-2020-03-14 05:12:41,872 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - jetty-6.1.26
-2020-03-14 05:12:42,093 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - Started HttpServer2$SelectChannelConnectorWithSafeStartup@localhost:38813
-2020-03-14 05:12:42,316 INFO  [main] web.DatanodeHttpServer (DatanodeHttpServer.java:start(186)) - Listening HTTP traffic on /0.0.0.0:50075
-2020-03-14 05:12:42,586 INFO  [main] datanode.DataNode (DataNode.java:startDataNode(1117)) - dnUserName = kshanka2
-2020-03-14 05:12:42,586 INFO  [main] datanode.DataNode (DataNode.java:startDataNode(1118)) - supergroup = supergroup
-2020-03-14 05:12:42,641 INFO  [main] ipc.CallQueueManager (CallQueueManager.java:<init>(53)) - Using callQueue class java.util.concurrent.LinkedBlockingQueue
-2020-03-14 05:12:42,663 INFO  [Socket Reader #1 for port 50020] ipc.Server (Server.java:run(606)) - Starting Socket Reader #1 for port 50020
-2020-03-14 05:12:42,697 INFO  [main] datanode.DataNode (DataNode.java:initIpcServer(817)) - Opened IPC server at /0.0.0.0:50020
-2020-03-14 05:12:42,715 INFO  [main] datanode.DataNode (BlockPoolManager.java:refreshNamenodes(152)) - Refresh request received for nameservices: null
-2020-03-14 05:12:42,744 INFO  [main] datanode.DataNode (BlockPoolManager.java:doRefreshNamenodes(197)) - Starting BPOfferServices for nameservices: <default>
-2020-03-14 05:12:42,759 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPServiceActor.java:run(795)) - Block pool <registering> (Datanode Uuid unassigned) service to c73/10.4.1.74:9000 starting to offer service
-2020-03-14 05:12:42,768 INFO  [IPC Server Responder] ipc.Server (Server.java:run(836)) - IPC Server Responder: starting
-2020-03-14 05:12:42,768 INFO  [IPC Server listener on 50020] ipc.Server (Server.java:run(676)) - IPC Server listener on 50020: starting
-2020-03-14 05:12:43,326 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (Storage.java:tryLock(715)) - Lock on /tmp/kshanka2/name/data/in_use.lock acquired by nodename 5359@c74.localdomain
-2020-03-14 05:12:43,330 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (DataStorage.java:loadStorageDirectory(274)) - Storage directory /tmp/kshanka2/name/data is not formatted for BP-1409834451-10.4.1.74-1584177152382
-2020-03-14 05:12:43,330 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (DataStorage.java:loadStorageDirectory(276)) - Formatting ...
-2020-03-14 05:12:43,438 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (BlockPoolSliceStorage.java:recoverTransitionRead(243)) - Analyzing storage directories for bpid BP-1409834451-10.4.1.74-1584177152382
-2020-03-14 05:12:43,439 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (Storage.java:lock(675)) - Locking is disabled for /tmp/kshanka2/name/data/current/BP-1409834451-10.4.1.74-1584177152382
-2020-03-14 05:12:43,439 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (BlockPoolSliceStorage.java:loadStorageDirectory(160)) - Block pool storage directory /tmp/kshanka2/name/data/current/BP-1409834451-10.4.1.74-1584177152382 is not formatted for BP-1409834451-10.4.1.74-1584177152382
-2020-03-14 05:12:43,440 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (BlockPoolSliceStorage.java:loadStorageDirectory(162)) - Formatting ...
-2020-03-14 05:12:43,440 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (BlockPoolSliceStorage.java:format(269)) - Formatting block pool BP-1409834451-10.4.1.74-1584177152382 directory /tmp/kshanka2/name/data/current/BP-1409834451-10.4.1.74-1584177152382/current
-2020-03-14 05:12:43,487 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (DataNode.java:initStorage(1361)) - Setting up storage: nsid=1011855723;bpid=BP-1409834451-10.4.1.74-1584177152382;lv=-56;nsInfo=lv=-63;cid=CID-d8368a3d-8620-495f-a9a5-363e9f751081;nsid=1011855723;c=0;bpid=BP-1409834451-10.4.1.74-1584177152382;dnuuid=null
-2020-03-14 05:12:43,518 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (DataNode.java:checkDatanodeUuid(1193)) - Generated and persisted new Datanode UUID 7b5d5526-4456-4d36-b010-2c0298f9d949
-2020-03-14 05:12:43,575 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsVolumeList.java:addVolume(303)) - Added new volume: DS-68be6217-3042-4848-8d52-45f41eed3ac2
-2020-03-14 05:12:43,575 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsDatasetImpl.java:addVolume(380)) - Added volume - /tmp/kshanka2/name/data/current, StorageType: DISK
-2020-03-14 05:12:43,581 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsDatasetImpl.java:registerMBean(2043)) - Registered FSDatasetState MBean
-2020-03-14 05:12:43,582 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsDatasetImpl.java:addBlockPool(2489)) - Adding block pool BP-1409834451-10.4.1.74-1584177152382
-2020-03-14 05:12:43,583 INFO  [Thread-27] impl.FsDatasetImpl (FsVolumeList.java:run(402)) - Scanning block pool BP-1409834451-10.4.1.74-1584177152382 on volume /tmp/kshanka2/name/data/current...
+2020-03-14 05:48:01,216 INFO  [main] datanode.DataNode (LogAdapter.java:info(45)) - registered UNIX signal handlers for [TERM, HUP, INT]
+2020-03-14 05:48:02,951 WARN  [main] impl.MetricsConfig (MetricsConfig.java:loadFirst(125)) - Cannot locate configuration: tried hadoop-metrics2-datanode.properties,hadoop-metrics2.properties
+2020-03-14 05:48:03,225 INFO  [main] impl.MetricsSystemImpl (MetricsSystemImpl.java:startTimer(377)) - Scheduled snapshot period at 10 second(s).
+2020-03-14 05:48:03,226 INFO  [main] impl.MetricsSystemImpl (MetricsSystemImpl.java:start(192)) - DataNode metrics system started
+2020-03-14 05:48:03,263 INFO  [main] datanode.BlockScanner (BlockScanner.java:<init>(172)) - Initialized block scanner with targetBytesPerSec 1048576
+2020-03-14 05:48:03,269 INFO  [main] datanode.DataNode (DataNode.java:<init>(427)) - Configured hostname is c74.localdomain
+2020-03-14 05:48:03,301 INFO  [main] datanode.DataNode (DataNode.java:startDataNode(1100)) - Starting DataNode with maxLockedMemory = 0
+2020-03-14 05:48:03,390 INFO  [main] datanode.DataNode (DataNode.java:initDataXceiver(898)) - Opened streaming server at /0.0.0.0:50010
+2020-03-14 05:48:03,416 INFO  [main] datanode.DataNode (DataXceiverServer.java:<init>(76)) - Balancing bandwith is 1048576 bytes/s
+2020-03-14 05:48:03,416 INFO  [main] datanode.DataNode (DataXceiverServer.java:<init>(77)) - Number threads for balancing is 5
+2020-03-14 05:48:03,667 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2020-03-14 05:48:03,680 INFO  [main] server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(284)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2020-03-14 05:48:03,690 INFO  [main] http.HttpRequestLog (HttpRequestLog.java:getRequestLog(80)) - Http request log for http.requests.datanode is not defined
+2020-03-14 05:48:03,719 INFO  [main] http.HttpServer2 (HttpServer2.java:addGlobalFilter(710)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2020-03-14 05:48:03,721 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(685)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context datanode
+2020-03-14 05:48:03,723 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(693)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2020-03-14 05:48:03,723 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(693)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2020-03-14 05:48:03,757 INFO  [main] http.HttpServer2 (HttpServer2.java:openListeners(915)) - Jetty bound to port 36667
+2020-03-14 05:48:03,758 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - jetty-6.1.26
+2020-03-14 05:48:04,296 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - Started HttpServer2$SelectChannelConnectorWithSafeStartup@localhost:36667
+2020-03-14 05:48:04,615 INFO  [main] web.DatanodeHttpServer (DatanodeHttpServer.java:start(186)) - Listening HTTP traffic on /0.0.0.0:50075
+2020-03-14 05:48:05,049 INFO  [main] datanode.DataNode (DataNode.java:startDataNode(1117)) - dnUserName = kshanka2
+2020-03-14 05:48:05,050 INFO  [main] datanode.DataNode (DataNode.java:startDataNode(1118)) - supergroup = supergroup
+2020-03-14 05:48:05,213 INFO  [main] ipc.CallQueueManager (CallQueueManager.java:<init>(53)) - Using callQueue class java.util.concurrent.LinkedBlockingQueue
+2020-03-14 05:48:05,252 INFO  [Socket Reader #1 for port 50020] ipc.Server (Server.java:run(606)) - Starting Socket Reader #1 for port 50020
+2020-03-14 05:48:05,355 INFO  [main] datanode.DataNode (DataNode.java:initIpcServer(817)) - Opened IPC server at /0.0.0.0:50020
+2020-03-14 05:48:05,395 INFO  [main] datanode.DataNode (BlockPoolManager.java:refreshNamenodes(152)) - Refresh request received for nameservices: null
+2020-03-14 05:48:05,470 INFO  [main] datanode.DataNode (BlockPoolManager.java:doRefreshNamenodes(197)) - Starting BPOfferServices for nameservices: <default>
+2020-03-14 05:48:05,523 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPServiceActor.java:run(795)) - Block pool <registering> (Datanode Uuid unassigned) service to c73/10.4.1.74:9000 starting to offer service
+2020-03-14 05:48:05,575 INFO  [IPC Server Responder] ipc.Server (Server.java:run(836)) - IPC Server Responder: starting
+2020-03-14 05:48:05,576 INFO  [IPC Server listener on 50020] ipc.Server (Server.java:run(676)) - IPC Server listener on 50020: starting
+2020-03-14 05:48:06,239 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (Storage.java:tryLock(715)) - Lock on /tmp/kshanka2/name/data/in_use.lock acquired by nodename 9615@c74.localdomain
+2020-03-14 05:48:06,244 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (DataStorage.java:loadStorageDirectory(274)) - Storage directory /tmp/kshanka2/name/data is not formatted for BP-1124129003-10.4.1.74-1584179270147
+2020-03-14 05:48:06,244 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (DataStorage.java:loadStorageDirectory(276)) - Formatting ...
+2020-03-14 05:48:06,361 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (BlockPoolSliceStorage.java:recoverTransitionRead(243)) - Analyzing storage directories for bpid BP-1124129003-10.4.1.74-1584179270147
+2020-03-14 05:48:06,361 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (Storage.java:lock(675)) - Locking is disabled for /tmp/kshanka2/name/data/current/BP-1124129003-10.4.1.74-1584179270147
+2020-03-14 05:48:06,362 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (BlockPoolSliceStorage.java:loadStorageDirectory(160)) - Block pool storage directory /tmp/kshanka2/name/data/current/BP-1124129003-10.4.1.74-1584179270147 is not formatted for BP-1124129003-10.4.1.74-1584179270147
+2020-03-14 05:48:06,362 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (BlockPoolSliceStorage.java:loadStorageDirectory(162)) - Formatting ...
+2020-03-14 05:48:06,362 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] common.Storage (BlockPoolSliceStorage.java:format(269)) - Formatting block pool BP-1124129003-10.4.1.74-1584179270147 directory /tmp/kshanka2/name/data/current/BP-1124129003-10.4.1.74-1584179270147/current
+2020-03-14 05:48:06,412 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (DataNode.java:initStorage(1361)) - Setting up storage: nsid=1249594542;bpid=BP-1124129003-10.4.1.74-1584179270147;lv=-56;nsInfo=lv=-63;cid=CID-da53aa11-c972-4fbd-be08-22976d381792;nsid=1249594542;c=0;bpid=BP-1124129003-10.4.1.74-1584179270147;dnuuid=null
+2020-03-14 05:48:06,440 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (DataNode.java:checkDatanodeUuid(1193)) - Generated and persisted new Datanode UUID 0923dee1-6093-4e5d-9ec5-d78ca243c11e
+2020-03-14 05:48:06,512 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsVolumeList.java:addVolume(303)) - Added new volume: DS-23e5359d-93a4-4c24-a6fb-0ee764f777d0
+2020-03-14 05:48:06,513 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsDatasetImpl.java:addVolume(380)) - Added volume - /tmp/kshanka2/name/data/current, StorageType: DISK
+2020-03-14 05:48:06,526 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsDatasetImpl.java:registerMBean(2043)) - Registered FSDatasetState MBean
+2020-03-14 05:48:06,527 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsDatasetImpl.java:addBlockPool(2489)) - Adding block pool BP-1124129003-10.4.1.74-1584179270147
+2020-03-14 05:48:06,528 INFO  [Thread-27] impl.FsDatasetImpl (FsVolumeList.java:run(402)) - Scanning block pool BP-1124129003-10.4.1.74-1584179270147 on volume /tmp/kshanka2/name/data/current...
+2020-03-14 05:48:06,562 INFO  [Thread-27] impl.FsDatasetImpl (FsVolumeList.java:run(407)) - Time taken to scan block pool BP-1124129003-10.4.1.74-1584179270147 on /tmp/kshanka2/name/data/current: 34ms
+2020-03-14 05:48:06,563 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsVolumeList.java:addBlockPool(433)) - Total time to scan all replicas for block pool BP-1124129003-10.4.1.74-1584179270147: 36ms
+2020-03-14 05:48:06,564 INFO  [Thread-29] impl.FsDatasetImpl (FsVolumeList.java:run(189)) - Adding replicas to map for block pool BP-1124129003-10.4.1.74-1584179270147 on volume /tmp/kshanka2/name/data/current...
+2020-03-14 05:48:06,565 INFO  [Thread-29] impl.FsDatasetImpl (FsVolumeList.java:run(194)) - Time to add replicas to map for block pool BP-1124129003-10.4.1.74-1584179270147 on volume /tmp/kshanka2/name/data/current: 0ms
+2020-03-14 05:48:06,566 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] impl.FsDatasetImpl (FsVolumeList.java:getAllVolumesMap(220)) - Total time to add all replicas to map: 3ms
+2020-03-14 05:48:06,810 INFO  [VolumeScannerThread(/tmp/kshanka2/name/data)] datanode.VolumeScanner (VolumeScanner.java:findNextUsableBlockIter(378)) - Now scanning bpid BP-1124129003-10.4.1.74-1584179270147 on volume /tmp/kshanka2/name/data
+2020-03-14 05:48:06,814 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DirectoryScanner (DirectoryScanner.java:start(332)) - Periodic Directory Tree Verification scan starting at 1584179456814 with interval 21600000
+2020-03-14 05:48:06,815 INFO  [VolumeScannerThread(/tmp/kshanka2/name/data)] datanode.VolumeScanner (VolumeScanner.java:runLoop(533)) - VolumeScanner(/tmp/kshanka2/name/data, DS-23e5359d-93a4-4c24-a6fb-0ee764f777d0): finished scanning block pool BP-1124129003-10.4.1.74-1584179270147
+2020-03-14 05:48:06,831 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPServiceActor.java:register(749)) - Block pool BP-1124129003-10.4.1.74-1584179270147 (Datanode Uuid null) service to c73/10.4.1.74:9000 beginning handshake with NN
+2020-03-14 05:48:06,877 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPServiceActor.java:register(768)) - Block pool Block pool BP-1124129003-10.4.1.74-1584179270147 (Datanode Uuid null) service to c73/10.4.1.74:9000 successfully registered with NN
+2020-03-14 05:48:06,878 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPServiceActor.java:offerService(626)) - For namenode c73/10.4.1.74:9000 using DELETEREPORT_INTERVAL of 300000 msec  BLOCKREPORT_INTERVAL of 21600000msec CACHEREPORT_INTERVAL of 10000msec Initial delay: 0msec; heartBeatInterval=3000
+2020-03-14 05:48:06,957 INFO  [VolumeScannerThread(/tmp/kshanka2/name/data)] datanode.VolumeScanner (VolumeScanner.java:findNextUsableBlockIter(395)) - VolumeScanner(/tmp/kshanka2/name/data, DS-23e5359d-93a4-4c24-a6fb-0ee764f777d0): no suitable block pools found to scan.  Waiting 1814399853 ms.
+2020-03-14 05:48:07,027 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPOfferService.java:updateActorStatesFromHeartbeat(511)) - Namenode Block pool BP-1124129003-10.4.1.74-1584179270147 (Datanode Uuid 0923dee1-6093-4e5d-9ec5-d78ca243c11e) service to c73/10.4.1.74:9000 trying to claim ACTIVE state with txid=1
+2020-03-14 05:48:07,028 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPOfferService.java:updateActorStatesFromHeartbeat(523)) - Acknowledging ACTIVE Namenode Block pool BP-1124129003-10.4.1.74-1584179270147 (Datanode Uuid 0923dee1-6093-4e5d-9ec5-d78ca243c11e) service to c73/10.4.1.74:9000
+2020-03-14 05:48:07,085 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPServiceActor.java:blockReport(492)) - Successfully sent block report 0x9bc4e32103e2a,  containing 1 storage report(s), of which we sent 1. The reports had 0 total blocks and used 1 RPC(s). This took 9 msec to generate and 47 msecs for RPC and NN processing. Got back one command: FinalizeCommand/5.
+2020-03-14 05:48:07,086 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c73/10.4.1.74:9000] datanode.DataNode (BPOfferService.java:processCommandFromActive(694)) - Got finalize command for block pool BP-1124129003-10.4.1.74-1584179270147
+2020-03-14 05:50:56,825 INFO  [java.util.concurrent.ThreadPoolExecutor$Worker@286a8fbb[State = -1, empty queue]] datanode.DirectoryScanner (DirectoryScanner.java:scan(505)) - BlockPool BP-1124129003-10.4.1.74-1584179270147 Total blocks: 0, missing metadata files:0, missing block files:0, missing blocks in memory:0, mismatched blocks:0
