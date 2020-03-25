@@ -612,7 +612,7 @@ buy@bruno-mars.txt	3
 buy@jimi-hendrix.txt	5
 buyin@bruno-mars.txt	1
 buys@bruno-mars.txt	1
-bv[are@jimi-hendrix.txt	1
+bv[are]@jimi-hendrix.txt	1
 bvclap@jimi-hendrix.txt	1
 by@alicia-keys.txt	37
 by@bruno-mars.txt	23
@@ -4224,7 +4224,7 @@ soldiers@jimi-hendrix.txt	1
 solid@alicia-keys.txt	1
 solo@alicia-keys.txt	2
 solo@jimi-hendrix.txt	4
-solobridge@jimi-hendrix.txt	1
+solobridge]@jimi-hendrix.txt	1
 some@alicia-keys.txt	107
 some@bruno-mars.txt	36
 some@jimi-hendrix.txt	19
@@ -5360,8 +5360,9 @@ wrooooong@bruno-mars.txt	1
 wrote@alicia-keys.txt	1
 wrote@jimi-hendrix.txt	1
 x12@jimi-hendrix.txt	1
-x2@alicia-keys.txt	10
+x2@alicia-keys.txt	5
 x2@bruno-mars.txt	4
+x2]@alicia-keys.txt	5
 x3@bruno-mars.txt	1
 x3@jimi-hendrix.txt	1
 x5@jimi-hendrix.txt	1
