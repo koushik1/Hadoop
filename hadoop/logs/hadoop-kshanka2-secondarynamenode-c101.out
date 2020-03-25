@@ -1,4 +1,4 @@
-2020-03-25 03:11:34,897 INFO  [main] namenode.SecondaryNameNode (LogAdapter.java:info(45)) - STARTUP_MSG: 
+2020-03-25 03:24:13,948 INFO  [main] namenode.SecondaryNameNode (LogAdapter.java:info(45)) - STARTUP_MSG: 
 /************************************************************
 STARTUP_MSG: Starting SecondaryNameNode
 STARTUP_MSG:   host = c101.localdomain/10.4.1.102
@@ -8,216 +8,148 @@ STARTUP_MSG:   classpath = /home/kshanka2/p1/hadoop/etc/hadoop:/home/kshanka2/p1
 STARTUP_MSG:   build = https://git-wip-us.apache.org/repos/asf/hadoop.git -r b165c4fe8a74265c792ce23f546c64604acf0e41; compiled by 'jenkins' on 2016-01-26T00:08Z
 STARTUP_MSG:   java = 1.8.0_121
 ************************************************************/
-2020-03-25 03:11:34,912 INFO  [main] namenode.SecondaryNameNode (LogAdapter.java:info(45)) - registered UNIX signal handlers for [TERM, HUP, INT]
-2020-03-25 03:11:35,638 WARN  [main] impl.MetricsConfig (MetricsConfig.java:loadFirst(125)) - Cannot locate configuration: tried hadoop-metrics2-secondarynamenode.properties,hadoop-metrics2.properties
-2020-03-25 03:11:35,767 INFO  [main] impl.MetricsSystemImpl (MetricsSystemImpl.java:startTimer(377)) - Scheduled snapshot period at 10 second(s).
-2020-03-25 03:11:35,767 INFO  [main] impl.MetricsSystemImpl (MetricsSystemImpl.java:start(192)) - SecondaryNameNode metrics system started
-2020-03-25 03:11:36,175 INFO  [main] common.Storage (Storage.java:tryLock(715)) - Lock on /tmp/hadoop-kshanka2/dfs/namesecondary/in_use.lock acquired by nodename 24488@c101.localdomain
-2020-03-25 03:11:36,185 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(716)) - No KeyProvider found.
-2020-03-25 03:11:36,186 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(726)) - fsLock is fair:true
-2020-03-25 03:11:36,251 INFO  [main] blockmanagement.DatanodeManager (DatanodeManager.java:<init>(239)) - dfs.block.invalidate.limit=1000
-2020-03-25 03:11:36,251 INFO  [main] blockmanagement.DatanodeManager (DatanodeManager.java:<init>(245)) - dfs.namenode.datanode.registration.ip-hostname-check=true
-2020-03-25 03:11:36,253 INFO  [main] blockmanagement.BlockManager (InvalidateBlocks.java:printBlockDeletionTime(71)) - dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
-2020-03-25 03:11:36,256 INFO  [main] blockmanagement.BlockManager (InvalidateBlocks.java:printBlockDeletionTime(76)) - The block deletion will start around 2020 Mar 25 03:11:36
-2020-03-25 03:11:36,259 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map BlocksMap
-2020-03-25 03:11:36,260 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
-2020-03-25 03:11:36,262 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(356)) - 2.0% max memory 889 MB = 17.8 MB
-2020-03-25 03:11:36,262 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^21 = 2097152 entries
-2020-03-25 03:11:36,288 INFO  [main] blockmanagement.BlockManager (BlockManager.java:createBlockTokenSecretManager(358)) - dfs.block.access.token.enable=false
-2020-03-25 03:11:36,289 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(344)) - defaultReplication         = 1
-2020-03-25 03:11:36,289 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(345)) - maxReplication             = 512
-2020-03-25 03:11:36,289 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(346)) - minReplication             = 1
-2020-03-25 03:11:36,290 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(347)) - maxReplicationStreams      = 2
-2020-03-25 03:11:36,290 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(348)) - replicationRecheckInterval = 3000
-2020-03-25 03:11:36,290 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(349)) - encryptDataTransfer        = false
-2020-03-25 03:11:36,290 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(350)) - maxNumBlocksToLog          = 1000
-2020-03-25 03:11:36,293 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(746)) - fsOwner             = kshanka2 (auth:SIMPLE)
-2020-03-25 03:11:36,293 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(747)) - supergroup          = supergroup
-2020-03-25 03:11:36,294 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(748)) - isPermissionEnabled = true
-2020-03-25 03:11:36,294 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(759)) - HA Enabled: false
-2020-03-25 03:11:36,297 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(796)) - Append Enabled: true
-2020-03-25 03:11:36,640 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map INodeMap
-2020-03-25 03:11:36,640 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
-2020-03-25 03:11:36,641 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(356)) - 1.0% max memory 889 MB = 8.9 MB
-2020-03-25 03:11:36,641 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^20 = 1048576 entries
-2020-03-25 03:11:36,643 INFO  [main] namenode.FSDirectory (FSDirectory.java:<init>(235)) - ACLs enabled? false
-2020-03-25 03:11:36,644 INFO  [main] namenode.FSDirectory (FSDirectory.java:<init>(239)) - XAttrs enabled? true
-2020-03-25 03:11:36,644 INFO  [main] namenode.FSDirectory (FSDirectory.java:<init>(247)) - Maximum size of an xattr: 16384
-2020-03-25 03:11:36,644 INFO  [main] namenode.NameNode (FSDirectory.java:<init>(298)) - Caching file names occuring more than 10 times
-2020-03-25 03:11:36,655 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map cachedBlocks
-2020-03-25 03:11:36,656 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
-2020-03-25 03:11:36,656 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(356)) - 0.25% max memory 889 MB = 2.2 MB
-2020-03-25 03:11:36,656 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^18 = 262144 entries
-2020-03-25 03:11:36,659 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(5166)) - dfs.namenode.safemode.threshold-pct = 0.9990000128746033
-2020-03-25 03:11:36,659 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(5167)) - dfs.namenode.safemode.min.datanodes = 0
-2020-03-25 03:11:36,659 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(5168)) - dfs.namenode.safemode.extension     = 30000
-2020-03-25 03:11:36,664 INFO  [main] metrics.TopMetrics (TopMetrics.java:logConf(65)) - NNTop conf: dfs.namenode.top.window.num.buckets = 10
-2020-03-25 03:11:36,664 INFO  [main] metrics.TopMetrics (TopMetrics.java:logConf(67)) - NNTop conf: dfs.namenode.top.num.users = 10
-2020-03-25 03:11:36,664 INFO  [main] metrics.TopMetrics (TopMetrics.java:logConf(69)) - NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
-2020-03-25 03:11:36,683 INFO  [main] hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1703)) - Starting Web-server for secondary at: http://0.0.0.0:50090
-2020-03-25 03:11:36,848 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
-2020-03-25 03:11:36,859 INFO  [main] server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(284)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
-2020-03-25 03:11:36,866 INFO  [main] http.HttpRequestLog (HttpRequestLog.java:getRequestLog(80)) - Http request log for http.requests.secondary is not defined
-2020-03-25 03:11:36,874 INFO  [main] http.HttpServer2 (HttpServer2.java:addGlobalFilter(710)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
-2020-03-25 03:11:36,877 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(685)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context secondary
-2020-03-25 03:11:36,878 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(693)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
-2020-03-25 03:11:36,878 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(693)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
-2020-03-25 03:11:36,899 INFO  [main] http.HttpServer2 (HttpServer2.java:openListeners(915)) - Jetty bound to port 50090
-2020-03-25 03:11:36,899 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - jetty-6.1.26
-2020-03-25 03:11:36,972 WARN  [main] mortbay.log (Slf4jLog.java:warn(76)) - Can't reuse /tmp/Jetty_0_0_0_0_50090_secondary____y6aanv, using /tmp/Jetty_0_0_0_0_50090_secondary____y6aanv_1377685284225405308
-2020-03-25 03:11:37,146 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - Started HttpServer2$SelectChannelConnectorWithSafeStartup@0.0.0.0:50090
-2020-03-25 03:11:37,146 INFO  [main] namenode.SecondaryNameNode (SecondaryNameNode.java:initialize(278)) - Web server init done
-2020-03-25 03:11:37,149 INFO  [main] namenode.SecondaryNameNode (SecondaryNameNode.java:initialize(297)) - Checkpoint Period   :3600 secs (60 min)
-2020-03-25 03:11:37,149 INFO  [main] namenode.SecondaryNameNode (SecondaryNameNode.java:initialize(299)) - Log Size Trigger    :1000000 txns
-2020-03-25 03:12:37,703 INFO  [SecondaryNameNode Status
+2020-03-25 03:24:13,964 INFO  [main] namenode.SecondaryNameNode (LogAdapter.java:info(45)) - registered UNIX signal handlers for [TERM, HUP, INT]
+2020-03-25 03:24:14,742 WARN  [main] impl.MetricsConfig (MetricsConfig.java:loadFirst(125)) - Cannot locate configuration: tried hadoop-metrics2-secondarynamenode.properties,hadoop-metrics2.properties
+2020-03-25 03:24:14,842 INFO  [main] impl.MetricsSystemImpl (MetricsSystemImpl.java:startTimer(377)) - Scheduled snapshot period at 10 second(s).
+2020-03-25 03:24:14,842 INFO  [main] impl.MetricsSystemImpl (MetricsSystemImpl.java:start(192)) - SecondaryNameNode metrics system started
+2020-03-25 03:24:15,214 INFO  [main] common.Storage (Storage.java:tryLock(715)) - Lock on /tmp/hadoop-kshanka2/dfs/namesecondary/in_use.lock acquired by nodename 27720@c101.localdomain
+2020-03-25 03:24:15,280 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(716)) - No KeyProvider found.
+2020-03-25 03:24:15,281 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(726)) - fsLock is fair:true
+2020-03-25 03:24:15,345 INFO  [main] blockmanagement.DatanodeManager (DatanodeManager.java:<init>(239)) - dfs.block.invalidate.limit=1000
+2020-03-25 03:24:15,345 INFO  [main] blockmanagement.DatanodeManager (DatanodeManager.java:<init>(245)) - dfs.namenode.datanode.registration.ip-hostname-check=true
+2020-03-25 03:24:15,347 INFO  [main] blockmanagement.BlockManager (InvalidateBlocks.java:printBlockDeletionTime(71)) - dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000
+2020-03-25 03:24:15,350 INFO  [main] blockmanagement.BlockManager (InvalidateBlocks.java:printBlockDeletionTime(76)) - The block deletion will start around 2020 Mar 25 03:24:15
+2020-03-25 03:24:15,356 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map BlocksMap
+2020-03-25 03:24:15,357 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2020-03-25 03:24:15,359 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(356)) - 2.0% max memory 889 MB = 17.8 MB
+2020-03-25 03:24:15,359 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^21 = 2097152 entries
+2020-03-25 03:24:15,381 INFO  [main] blockmanagement.BlockManager (BlockManager.java:createBlockTokenSecretManager(358)) - dfs.block.access.token.enable=false
+2020-03-25 03:24:15,382 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(344)) - defaultReplication         = 1
+2020-03-25 03:24:15,382 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(345)) - maxReplication             = 512
+2020-03-25 03:24:15,382 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(346)) - minReplication             = 1
+2020-03-25 03:24:15,382 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(347)) - maxReplicationStreams      = 2
+2020-03-25 03:24:15,382 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(348)) - replicationRecheckInterval = 3000
+2020-03-25 03:24:15,383 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(349)) - encryptDataTransfer        = false
+2020-03-25 03:24:15,383 INFO  [main] blockmanagement.BlockManager (BlockManager.java:<init>(350)) - maxNumBlocksToLog          = 1000
+2020-03-25 03:24:15,385 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(746)) - fsOwner             = kshanka2 (auth:SIMPLE)
+2020-03-25 03:24:15,386 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(747)) - supergroup          = supergroup
+2020-03-25 03:24:15,386 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(748)) - isPermissionEnabled = true
+2020-03-25 03:24:15,386 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(759)) - HA Enabled: false
+2020-03-25 03:24:15,389 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(796)) - Append Enabled: true
+2020-03-25 03:24:15,719 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map INodeMap
+2020-03-25 03:24:15,720 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2020-03-25 03:24:15,720 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(356)) - 1.0% max memory 889 MB = 8.9 MB
+2020-03-25 03:24:15,720 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^20 = 1048576 entries
+2020-03-25 03:24:15,723 INFO  [main] namenode.FSDirectory (FSDirectory.java:<init>(235)) - ACLs enabled? false
+2020-03-25 03:24:15,724 INFO  [main] namenode.FSDirectory (FSDirectory.java:<init>(239)) - XAttrs enabled? true
+2020-03-25 03:24:15,724 INFO  [main] namenode.FSDirectory (FSDirectory.java:<init>(247)) - Maximum size of an xattr: 16384
+2020-03-25 03:24:15,724 INFO  [main] namenode.NameNode (FSDirectory.java:<init>(298)) - Caching file names occuring more than 10 times
+2020-03-25 03:24:15,736 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(354)) - Computing capacity for map cachedBlocks
+2020-03-25 03:24:15,736 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(355)) - VM type       = 64-bit
+2020-03-25 03:24:15,737 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(356)) - 0.25% max memory 889 MB = 2.2 MB
+2020-03-25 03:24:15,737 INFO  [main] util.GSet (LightWeightGSet.java:computeCapacity(361)) - capacity      = 2^18 = 262144 entries
+2020-03-25 03:24:15,797 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(5166)) - dfs.namenode.safemode.threshold-pct = 0.9990000128746033
+2020-03-25 03:24:15,797 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(5167)) - dfs.namenode.safemode.min.datanodes = 0
+2020-03-25 03:24:15,797 INFO  [main] namenode.FSNamesystem (FSNamesystem.java:<init>(5168)) - dfs.namenode.safemode.extension     = 30000
+2020-03-25 03:24:15,805 INFO  [main] metrics.TopMetrics (TopMetrics.java:logConf(65)) - NNTop conf: dfs.namenode.top.window.num.buckets = 10
+2020-03-25 03:24:15,805 INFO  [main] metrics.TopMetrics (TopMetrics.java:logConf(67)) - NNTop conf: dfs.namenode.top.num.users = 10
+2020-03-25 03:24:15,805 INFO  [main] metrics.TopMetrics (TopMetrics.java:logConf(69)) - NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25
+2020-03-25 03:24:15,824 INFO  [main] hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1703)) - Starting Web-server for secondary at: http://0.0.0.0:50090
+2020-03-25 03:24:15,921 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2020-03-25 03:24:15,932 INFO  [main] server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(284)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2020-03-25 03:24:15,939 INFO  [main] http.HttpRequestLog (HttpRequestLog.java:getRequestLog(80)) - Http request log for http.requests.secondary is not defined
+2020-03-25 03:24:15,947 INFO  [main] http.HttpServer2 (HttpServer2.java:addGlobalFilter(710)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2020-03-25 03:24:15,950 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(685)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context secondary
+2020-03-25 03:24:15,950 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(693)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2020-03-25 03:24:15,950 INFO  [main] http.HttpServer2 (HttpServer2.java:addFilter(693)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2020-03-25 03:24:15,971 INFO  [main] http.HttpServer2 (HttpServer2.java:openListeners(915)) - Jetty bound to port 50090
+2020-03-25 03:24:15,971 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - jetty-6.1.26
+2020-03-25 03:24:16,053 WARN  [main] mortbay.log (Slf4jLog.java:warn(76)) - Can't reuse /tmp/Jetty_0_0_0_0_50090_secondary____y6aanv, using /tmp/Jetty_0_0_0_0_50090_secondary____y6aanv_2914110853995024094
+2020-03-25 03:24:16,243 INFO  [main] mortbay.log (Slf4jLog.java:info(67)) - Started HttpServer2$SelectChannelConnectorWithSafeStartup@0.0.0.0:50090
+2020-03-25 03:24:16,243 INFO  [main] namenode.SecondaryNameNode (SecondaryNameNode.java:initialize(278)) - Web server init done
+2020-03-25 03:24:16,246 INFO  [main] namenode.SecondaryNameNode (SecondaryNameNode.java:initialize(297)) - Checkpoint Period   :3600 secs (60 min)
+2020-03-25 03:24:16,246 INFO  [main] namenode.SecondaryNameNode (SecondaryNameNode.java:initialize(299)) - Log Size Trigger    :1000000 txns
+2020-03-25 03:25:16,571 ERROR [SecondaryNameNode Status
 Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
+Start Time             : Wed Mar 25 03:24:13 EDT 2020
 Last Checkpoint        : -- seconds ago
 Checkpoint Period      : 3600 seconds
 Checkpoint Transactions: 1000000
 Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.SecondaryNameNode (SecondaryNameNode.java:run(455)) - Image has changed. Downloading updated image from NN.
-2020-03-25 03:12:38,658 INFO  [SecondaryNameNode Status
+Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.SecondaryNameNode (SecondaryNameNode.java:doWork(399)) - Exception in doCheckpoint
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -63 namespaceID = 132661680 cTime = 0 ; clusterId = CID-0b287321-810f-4e64-a224-1496e0ed13d2 ; blockpoolId = BP-614920258-10.4.1.102-1585121039012.
+Expecting respectively: -63; 400105864; 0; CID-d7f4fac1-99b5-490b-8a95-3e333e1114f2; BP-1193342451-10.4.1.102-1585120279772.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -63 namespaceID = 132661680 cTime = 0 ; clusterId = CID-0b287321-810f-4e64-a224-1496e0ed13d2 ; blockpoolId = BP-614920258-10.4.1.102-1585121039012.
+Expecting respectively: -63; 400105864; 0; CID-d7f4fac1-99b5-490b-8a95-3e333e1114f2; BP-1193342451-10.4.1.102-1585120279772.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-25 03:26:16,706 ERROR [SecondaryNameNode Status
 Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
+Start Time             : Wed Mar 25 03:24:13 EDT 2020
 Last Checkpoint        : -- seconds ago
 Checkpoint Period      : 3600 seconds
 Checkpoint Transactions: 1000000
 Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.TransferFsImage (TransferFsImage.java:getFileClient(396)) - Opening connection to http://c101:50070/imagetransfer?getimage=1&txid=0&storageInfo=-63:400105864:0:CID-d7f4fac1-99b5-490b-8a95-3e333e1114f2
-2020-03-25 03:12:38,772 INFO  [SecondaryNameNode Status
+Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.SecondaryNameNode (SecondaryNameNode.java:doWork(399)) - Exception in doCheckpoint
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -63 namespaceID = 132661680 cTime = 0 ; clusterId = CID-0b287321-810f-4e64-a224-1496e0ed13d2 ; blockpoolId = BP-614920258-10.4.1.102-1585121039012.
+Expecting respectively: -63; 400105864; 0; CID-d7f4fac1-99b5-490b-8a95-3e333e1114f2; BP-1193342451-10.4.1.102-1585120279772.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -63 namespaceID = 132661680 cTime = 0 ; clusterId = CID-0b287321-810f-4e64-a224-1496e0ed13d2 ; blockpoolId = BP-614920258-10.4.1.102-1585121039012.
+Expecting respectively: -63; 400105864; 0; CID-d7f4fac1-99b5-490b-8a95-3e333e1114f2; BP-1193342451-10.4.1.102-1585120279772.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-25 03:27:16,839 ERROR [SecondaryNameNode Status
 Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
+Start Time             : Wed Mar 25 03:24:13 EDT 2020
 Last Checkpoint        : -- seconds ago
 Checkpoint Period      : 3600 seconds
 Checkpoint Transactions: 1000000
 Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.TransferFsImage (TransferFsImage.java:setTimeout(443)) - Image Transfer timeout configured to 60000 milliseconds
-2020-03-25 03:12:39,334 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.TransferFsImage (TransferFsImage.java:receiveFile(553)) - Transfer took 0.14s at 0.00 KB/s
-2020-03-25 03:12:39,335 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.TransferFsImage (TransferFsImage.java:downloadImageToStorage(115)) - Downloaded file fsimage.ckpt_0000000000000000000 size 355 bytes.
-2020-03-25 03:12:39,412 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.TransferFsImage (TransferFsImage.java:getFileClient(396)) - Opening connection to http://c101:50070/imagetransfer?getedit=1&startTxId=1&endTxId=42&storageInfo=-63:400105864:0:CID-d7f4fac1-99b5-490b-8a95-3e333e1114f2
-2020-03-25 03:12:39,492 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.TransferFsImage (TransferFsImage.java:receiveFile(553)) - Transfer took 0.07s at 59.70 KB/s
-2020-03-25 03:12:39,493 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.TransferFsImage (TransferFsImage.java:downloadEditsToStorage(168)) - Downloaded file edits_tmp_0000000000000000001-0000000000000000042_0000000003681324010 size 0 bytes.
-2020-03-25 03:12:39,560 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.FSImageFormatPBINode (FSImageFormatPBINode.java:loadINodeSection(255)) - Loading 1 INodes.
-2020-03-25 03:12:39,608 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.FSImageFormatProtobuf (FSImageFormatProtobuf.java:load(181)) - Loaded FSImage in 0 seconds.
-2020-03-25 03:12:39,609 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.FSImage (FSImage.java:loadFSImage(970)) - Loaded image for txid 0 from /tmp/hadoop-kshanka2/dfs/namesecondary/current/fsimage_0000000000000000000
-2020-03-25 03:12:39,609 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.NameCache (NameCache.java:initialized(143)) - initialized with 0 entries 0 lookups
-2020-03-25 03:12:39,617 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.Checkpointer (Checkpointer.java:rollForwardByApplyingLogs(309)) - Checkpointer about to load edits from 1 stream(s).
-2020-03-25 03:12:39,624 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.FSImage (FSImage.java:loadEdits(834)) - Reading /tmp/hadoop-kshanka2/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000042 expecting start txid #1
-2020-03-25 03:12:39,624 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.FSImage (FSEditLogLoader.java:loadFSEdits(142)) - Start loading edits file /tmp/hadoop-kshanka2/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000042
-2020-03-25 03:12:39,726 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.FSImage (FSEditLogLoader.java:loadFSEdits(145)) - Edits file /tmp/hadoop-kshanka2/dfs/namesecondary/current/edits_0000000000000000001-0000000000000000042 of size 4139 edits # 42 loaded in 0 seconds
-2020-03-25 03:12:39,914 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.FSImageTransactionalStorageInspector (FSImageTransactionalStorageInspector.java:inspectDirectory(85)) - No version file in /tmp/hadoop-kshanka2/dfs/namesecondary
-2020-03-25 03:12:40,232 INFO  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.TransferFsImage (TransferFsImage.java:uploadImageFromStorage(237)) - Uploaded image with txid 42 to namenode at http://c101:50070 in 0.263 seconds
-2020-03-25 03:12:40,234 WARN  [SecondaryNameNode Status
-Name Node Address      : c101/10.4.1.102:9000
-Start Time             : Wed Mar 25 03:11:34 EDT 2020
-Last Checkpoint        : -- seconds ago
-Checkpoint Period      : 3600 seconds
-Checkpoint Transactions: 1000000
-Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
-Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.SecondaryNameNode (SecondaryNameNode.java:doCheckpoint(566)) - Checkpoint done. New Image Size: 1095
+Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.SecondaryNameNode (SecondaryNameNode.java:doWork(399)) - Exception in doCheckpoint
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -63 namespaceID = 132661680 cTime = 0 ; clusterId = CID-0b287321-810f-4e64-a224-1496e0ed13d2 ; blockpoolId = BP-614920258-10.4.1.102-1585121039012.
+Expecting respectively: -63; 400105864; 0; CID-d7f4fac1-99b5-490b-8a95-3e333e1114f2; BP-1193342451-10.4.1.102-1585120279772.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -63 namespaceID = 132661680 cTime = 0 ; clusterId = CID-0b287321-810f-4e64-a224-1496e0ed13d2 ; blockpoolId = BP-614920258-10.4.1.102-1585121039012.
+Expecting respectively: -63; 400105864; 0; CID-d7f4fac1-99b5-490b-8a95-3e333e1114f2; BP-1193342451-10.4.1.102-1585120279772.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
