@@ -103,7 +103,7 @@ public class TFICF {
 	job2.setCombinerClass(DSReducer.class);
 	job2.setReducerClass(DSReducer.class);
 	job2.setOutputKeyClass(Text.class);
-	job2.setOutputValueClass(IntWritable.class);
+	job2.setOutputValueClass(Text.class);
 	FileInputFormat.addInputPath(job2, dsInputPath);
 	FileOutputFormat.setOutputPath(job2, dsOutputPath);
 	job2.waitForCompletion(true);
@@ -182,8 +182,8 @@ public class TFICF {
      * Rearranges the (key,value) pairs to have only the document as the key
      *
      * Input:  ( (word@document) , wordCount )
-	 * Output: ( document , (word=wordCount) )
-	      */
+     * Output: ( document , (word=wordCount) )
+	  */
     public static class DSMapper extends Mapper<Object, Text, Text, Text> {
 	
 	/************ YOUR CODE HERE ************/
@@ -211,12 +211,11 @@ public class TFICF {
     public static class DSReducer extends Reducer<Text, Text, Text, Text> {
 	
 	/************ YOUR CODE HERE ************/
-	Text result = new Text("lol");
 
 	public void reduce(Text key, Iterable<Text> values,Context context
 			   ) throws IOException, InterruptedException {
-
-	    context.write(key, result);
+	    Text x = new Text
+	    context.write(key, );
 	}
 	
     }

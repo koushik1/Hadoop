@@ -187,15 +187,22 @@ public class TFICF {
     public static class DSMapper extends Mapper<Object, Text, Text, Text> {
 	
 	/************ YOUR CODE HERE ************/
-	Text one = new Text("lol");
-        private Text word = new Text();
+        private Text document_text = new Text();
+        private Text word_text = new Text();
 
         public void map(Object key, Text value, Context context
                         ) throws IOException, InterruptedException {
 	    
-	    String current_word = value.toString();
-	    word.set(current_word);
-	    context.write(word, one);
+	    
+	    String[] keys = value.toString().split("\\t");
+	    String word_doc = keys[0];
+	    String word_count = keys[1];
+	    String[] doc_key = word_doc.split("@");
+	    String current_word = doc_key[0];
+	    String document = doc_key[1];
+	    document_text.set(document);
+	    word_text.set(current_word + "=" + word_count);
+	    context.write(document_text, word_text);
         }
 	
     }
