@@ -142,10 +142,13 @@ public class TFICF {
                 String current_word = itr.nextToken();
                 current_word = current_word.replaceAll("[^a-zA-Z-]", "");
                 current_word = current_word.toLowerCase().trim();
-                if (!current_word.isEmpty() && current_word != "-")
+                if (!current_word.isEmpty())
                     {
-                        word.set(current_word+"@"+fileName);
-                        context.write(word, one);
+			if ( current_word.charAt(0) >= 'a' && current_word.charAt(0) <= 'z' )
+			    {
+				word.set(current_word+"@"+fileName);
+				context.write(word, one);
+			    }
                     }
             }
         }
@@ -182,8 +185,8 @@ public class TFICF {
      * Rearranges the (key,value) pairs to have only the document as the key
      *
      * Input:  ( (word@document) , wordCount )
-     * Output: ( document , (word=wordCount) )
-	  */
+	 * Output: ( document , (word=wordCount) )
+	      */
     public static class DSMapper extends Mapper<Object, Text, Text, Text> {
 	
 	/************ YOUR CODE HERE ************/
@@ -226,6 +229,7 @@ public class TFICF {
 	    List<String> inputs = new ArrayList<String>();
 	    for(Text value : values)
 		{
+		    System.out.println(value);
 		    inputs.add(value.toString());
 		    String count = value.toString().split("=")[1];
 		    docSize += Integer.parseInt(count);
