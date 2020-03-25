@@ -237,7 +237,7 @@ public class TFICF {
 
 		    }
 		    catch (Exception e) {
-			System.out.println("value");
+			System.out.println(value);
 		    }
 		}
 
