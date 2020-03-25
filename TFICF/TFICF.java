@@ -145,7 +145,7 @@ public class TFICF {
                     {
 			if ( current_word.charAt(0) >= 'a' && current_word.charAt(0) <= 'z' )
 			    {
-				current_word = current_word.replaceAll("[,\\.!]", "");
+				current_word = current_word.replaceAll("[^a-zA-Z0-9-]", "");
 				word.set(current_word+"@"+fileName);
 				context.write(word, one);
 			    }
