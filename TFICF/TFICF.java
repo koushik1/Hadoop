@@ -243,12 +243,18 @@ public class TFICF {
 
 	    for(String word_input : inputs)
 		{
-		    String[] word_key = word_input.split("=");
-		    String current_word = word_key[0];
-		    String current_word_count = word_key[1];
-		    Text out_key = new Text(current_word + "@" + key);
-		    Text out_val = new Text(current_word_count + "/" + docSize);
-		    context.write( out_key, out_val);
+		    try{
+			String[] word_key = word_input.split("=");
+			String current_word = word_key[0];
+			String current_word_count = word_key[1];
+			Text out_key = new Text(current_word + "@" + key);
+			Text out_val = new Text(current_word_count + "/" + docSize);
+			context.write( out_key, out_val);
+		    }
+		    catch (Exception e) {
+			System.out.println(word_input);
+		    }
+
 		}
 
 	}
@@ -278,11 +284,11 @@ public class TFICF {
      * numDocs = total number of documents
      * numDocsWithWord = number of documents containing word
      * TFICF = ln(wordCount/docSize + 1) * ln(numDocs/numDocsWithWord +1)
-     *
-     * Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
-	 *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
-	      *       is highly inefficient!
-	      */
+	 *
+	* Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
+	    *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
+		 *       is highly inefficient!
+		 */
     public static class TFICFReducer extends Reducer<Text, Text, Text, Text> {
 	
 	private static int numDocs;
