@@ -140,12 +140,12 @@ public class TFICF {
 
             while (itr.hasMoreTokens()) {
                 String current_word = itr.nextToken();
-                current_word = current_word.replaceAll("[^a-zA-Z-]", "");
                 current_word = current_word.toLowerCase().trim();
                 if (!current_word.isEmpty())
                     {
 			if ( current_word.charAt(0) >= 'a' && current_word.charAt(0) <= 'z' )
 			    {
+				current_word = current_word.replaceAll(",.", "");
 				word.set(current_word+"@"+fileName);
 				context.write(word, one);
 			    }
