@@ -230,10 +230,15 @@ public class TFICF {
 	    List<String> inputs = new ArrayList<String>();
 	    for(Text value : values)
 		{
-		    System.out.println(value);
 		    inputs.add(value.toString());
-		    String count = value.toString().split("=")[1];
-		    docSize += Integer.parseInt(count);
+		    try {
+			String count = value.toString().split("=")[1];
+			docSize += Integer.parseInt(count);
+
+		    }
+		    catch (Exception e) {
+			System.out.println("value");
+		    }
 		}
 
 	    for(String word_input : inputs)
@@ -275,9 +280,9 @@ public class TFICF {
      * TFICF = ln(wordCount/docSize + 1) * ln(numDocs/numDocsWithWord +1)
      *
      * Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
-     *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
-	  *       is highly inefficient!
-	  */
+	 *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
+	      *       is highly inefficient!
+	      */
     public static class TFICFReducer extends Reducer<Text, Text, Text, Text> {
 	
 	private static int numDocs;
