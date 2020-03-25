@@ -1,6 +1,6 @@
 <configuration>
    <property>
       <name>mapred.job.tracker</name>
-      <value>c73:9001</value>
+      <value>c38:9001</value>
    </property>
 </configuration>

@@ -126,8 +126,9 @@ public class TFICF {
 	public void map(Object key, Text value, Context context
 			) throws IOException, InterruptedException {
 	    StringTokenizer itr = new StringTokenizer(value.toString());
+	    String fileName = ((FileSplit) context.getInputSplit()).getPath().getName();
 	    while (itr.hasMoreTokens()) {
-		word.set(itr.nextToken());
+		word.set(itr.nextToken()+'@'+fileName);
 		context.write(word, one);
 	    }
 	}
