@@ -131,7 +131,7 @@ public class TFICF {
 		String current_word = itr.nextToken();
 		current_word = current_word.replaceAll("[^a-zA-Z-]", "");
 		current_word = current_word.toLowerCase().trim();
-		if (current_word != "" | current_word != "-")
+		if (!current_word.isEmpty() && current_word != "-")
 		    {
 			word.set(current_word+"@"+fileName);
 			context.write(word, one);
