@@ -222,8 +222,25 @@ public class TFICF {
 	public void reduce(Text key, Iterable<Text> values,Context context
 			   ) throws IOException, InterruptedException {
 
-	    Text a = new Text("a");
-	    context.write(key, a);
+	    int docSize = 0;
+	    List<String> inputs = new ArrayList<String>();
+	    for(Text value : values)
+		{
+		    inputs.add(value.toString());
+		    String count = value.toString().split("=")[1];
+		    docSize += Integer.parseInt(count);
+		}
+
+	    for(String word_input : inputs)
+		{
+		    String[] word_key = word_input.split("=");
+		    String current_word = word_key[0];
+		    String current_word_count = word_key[1];
+		    Text out_key = new Text(current_word + "@" + key);
+		    Text out_val = new Text(current_word_count + "/" + docSize);
+		    context.write( out_key, out_val);
+		}
+
 	}
 	
     }
@@ -254,8 +271,8 @@ public class TFICF {
      *
      * Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
      *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
-     *       is highly inefficient!
-     */
+	  *       is highly inefficient!
+	  */
     public static class TFICFReducer extends Reducer<Text, Text, Text, Text> {
 	
 	private static int numDocs;
