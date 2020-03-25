@@ -244,7 +244,7 @@ public class TFICF {
 	    for(String word_input : inputs)
 		{
 		    try{
-			String[] word_key = word_input.split("=");
+			String[] word_key = word_input.toString().split("=");
 			String current_word = word_key[0];
 			String current_word_count = word_key[1];
 			Text out_key = new Text(current_word + "@" + key);
