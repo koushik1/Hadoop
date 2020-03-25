@@ -70,3 +70,32 @@ STARTUP_MSG:   java = 1.8.0_121
 2020-03-25 06:50:47,024 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c101/10.4.1.102:9000] datanode.DataNode (BPOfferService.java:updateActorStatesFromHeartbeat(523)) - Acknowledging ACTIVE Namenode Block pool BP-883439420-10.4.1.102-1585133429968 (Datanode Uuid 5ae299be-e26b-4d3d-9d6e-df0bccc61f18) service to c101/10.4.1.102:9000
 2020-03-25 06:50:47,073 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c101/10.4.1.102:9000] datanode.DataNode (BPServiceActor.java:blockReport(492)) - Successfully sent block report 0xb35cf1b195a24,  containing 1 storage report(s), of which we sent 1. The reports had 0 total blocks and used 1 RPC(s). This took 4 msec to generate and 45 msecs for RPC and NN processing. Got back one command: FinalizeCommand/5.
 2020-03-25 06:50:47,073 INFO  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c101/10.4.1.102:9000] datanode.DataNode (BPOfferService.java:processCommandFromActive(694)) - Got finalize command for block pool BP-883439420-10.4.1.102-1585133429968
+2020-03-25 06:59:52,963 WARN  [DataNode: [[[DISK]file:/tmp/kshanka2/name/data/]]  heartbeating to c101/10.4.1.102:9000] datanode.DataNode (BPServiceActor.java:offerService(725)) - IOException in offerService
+java.net.SocketTimeoutException: Call From c103.localdomain/10.4.1.104 to c101:9000 failed on socket timeout exception: java.net.SocketTimeoutException: 60000 millis timeout while waiting for channel to be ready for read. ch : java.nio.channels.SocketChannel[connected local=/10.4.1.104:51998 remote=c101/10.4.1.102:9000]; For more details see:  http://wiki.apache.org/hadoop/SocketTimeout
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:792)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:751)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1479)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1412)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:229)
+	at com.sun.proxy.$Proxy14.sendHeartbeat(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.DatanodeProtocolClientSideTranslatorPB.sendHeartbeat(DatanodeProtocolClientSideTranslatorPB.java:153)
+	at org.apache.hadoop.hdfs.server.datanode.BPServiceActor.sendHeartBeat(BPServiceActor.java:554)
+	at org.apache.hadoop.hdfs.server.datanode.BPServiceActor.offerService(BPServiceActor.java:653)
+	at org.apache.hadoop.hdfs.server.datanode.BPServiceActor.run(BPServiceActor.java:824)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketTimeoutException: 60000 millis timeout while waiting for channel to be ready for read. ch : java.nio.channels.SocketChannel[connected local=/10.4.1.104:51998 remote=c101/10.4.1.102:9000]
+	at org.apache.hadoop.net.SocketIOWithTimeout.doIO(SocketIOWithTimeout.java:164)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:161)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:131)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at org.apache.hadoop.ipc.Client$Connection$PingInputStream.read(Client.java:520)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at org.apache.hadoop.ipc.Client$Connection.receiveRpcResponse(Client.java:1084)
+	at org.apache.hadoop.ipc.Client$Connection.run(Client.java:979)
