@@ -128,7 +128,10 @@ public class TFICF {
 	    StringTokenizer itr = new StringTokenizer(value.toString());
 	    String fileName = ((FileSplit) context.getInputSplit()).getPath().getName();
 	    while (itr.hasMoreTokens()) {
-		word.set(itr.nextToken()+'@'+fileName);
+		String current_word = itr.nextToken();
+		current_word = current_word.replaceAll("[^a-zA-Z]", "");
+		current_word = current_word.toLowerCase();
+		word.set(current_word+"@"+fileName);
 		context.write(word, one);
 	    }
 	}
@@ -190,9 +193,9 @@ public class TFICF {
     /*
      * Rearranges the (key,value) pairs to have only the word as the key
      * 
-     * Input:  ( (word@document) , (wordCount/docSize) )
-     * Output: ( word , (document=wordCount/docSize) )
-     */
+	* Input:  ( (word@document) , (wordCount/docSize) )
+	    * Output: ( word , (document=wordCount/docSize) )
+		 */
     public static class TFICFMapper extends Mapper<Object, Text, Text, Text> {
 
 	/************ YOUR CODE HERE ************/
