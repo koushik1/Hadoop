@@ -87,7 +87,6 @@ public class TFICF {
 	Job job = Job.getInstance(conf, "word count");
 	job.setJarByClass(TFICF.class);
 	job.setMapperClass(WCMapper.class);
-	//job.setCombinerClass(WCReducer.class);
 	job.setReducerClass(WCReducer.class);
 	job.setOutputKeyClass(Text.class);
 	job.setOutputValueClass(IntWritable.class);
@@ -100,7 +99,6 @@ public class TFICF {
 	Job job2 = Job.getInstance(conf, "document size");
 	job2.setJarByClass(TFICF.class);
 	job2.setMapperClass(DSMapper.class);
-	//job2.setCombinerClass(DSReducer.class);
 	job2.setReducerClass(DSReducer.class);
 	job2.setOutputKeyClass(Text.class);
 	job2.setOutputValueClass(Text.class);
@@ -186,124 +184,124 @@ public class TFICF {
      * Rearranges the (key,value) pairs to have only the document as the key
      *
      * Input:  ( (word@document) , wordCount )
-	 * Output: ( document , (word=wordCount) )
-	      */
+     * Output: ( document , (word=wordCount) )
+     */
     public static class DSMapper extends Mapper<Object, Text, Text, Text> {
 	
 	/************ YOUR CODE HERE ************/
-	private Text document = new Text();
-	private Text result = new Text();
+        private Text document_text = new Text();
+        private Text word_text = new Text();
 
-        public void map(Object key, Text line, Context context
+        public void map(Object key, Text value, Context context
                         ) throws IOException, InterruptedException {
 	    
 	    
-	    String s = line.toString();
-	    document.set(s.split("\t")[0].trim().split("@")[1]);
-	    result.set(s.split("\t")[0].trim().split("@")[0].concat("=").concat(s.split("\t")[1].trim()));
-	    context.write(document, result);
-	}
-    
-    
-}
-
-/*
- * For each identical key (document), reduces the values (word=wordCount) into a sum (docSize) 
- *
- * Input:  ( document , (word=wordCount) )
- * Output: ( (word@document) , (wordCount/docSize) )
- *
- * docSize = total number of words in the document
- */
-public static class DSReducer extends Reducer<Text, Text, Text, Text> {
-    
-    /************ YOUR CODE HERE ************/
-
-    public void reduce(Text key, Iterable<Text> values,Context context
-		       ) throws IOException, InterruptedException {
-
-	int sum = 0;
-	int size = 0;
-
-	// Keep a cache of elements, so we can iterate again
-	ArrayList<Text> cache = new ArrayList<Text>();
-
-	for (Text val: values) {
-	    Text tmp = new Text();
-	    tmp.set(val);
-	    sum += Integer.parseInt(val.toString().split("=")[1]);
-	    size += 1;
-	    cache.add(tmp);
-	}
+	    String[] keys = value.toString().split("\\t");
+	    String word_doc = keys[0];
+	    String word_count = keys[1];
+	    String[] doc_key = word_doc.split("@");
+	    String current_word = doc_key[0];
+	    String document = doc_key[1];
+	    document_text.set(document);
+	    word_text.set(current_word + "=" + word_count);
+	    context.write(document_text, word_text);
+        }
 	
-	for (int i=0; i<size; i++) {
-	    Text word = new Text();
-	    Text result = new Text(); 
-	    Text val = new Text();
-	    val = cache.get(i);
-	    word.set(val.toString().split("=")[0].trim().concat("@").concat(key.toString()));
-	    result.set(val.toString().split("=")[1].trim().concat("/").concat(Integer.toString(sum)));
-	    context.write(word, result);
-	}
-
     }
-    
-}
 
-/*
- * Rearranges the (key,value) pairs to have only the word as the key
- * 
- * Input:  ( (word@document) , (wordCount/docSize) )
- * Output: ( word , (document=wordCount/docSize) )
- */
-public static class TFICFMapper extends Mapper<Object, Text, Text, Text> {
-
-    /************ YOUR CODE HERE ************/
-    
-}
-
-/*
- * For each identical key (word), reduces the values (document=wordCount/docSize) into a 
- * the final TFICF value (TFICF). Along the way, calculates the total number of documents and 
- * the number of documents that contain the word.
- * 
- * Input:  ( word , (document=wordCount/docSize) )
- * Output: ( (document@word) , TFICF )
- *
- * numDocs = total number of documents
- * numDocsWithWord = number of documents containing word
- * TFICF = ln(wordCount/docSize + 1) * ln(numDocs/numDocsWithWord +1)
- *
- * Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
- *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
- *       is highly inefficient!
- */
-public static class TFICFReducer extends Reducer<Text, Text, Text, Text> {
-    
-    private static int numDocs;
-    private Map<Text, Text> tficfMap = new HashMap<>();
-    
-    // gets the numDocs value and stores it
-    protected void setup(Context context) throws IOException, InterruptedException {
-	Configuration conf = context.getConfiguration();
-	numDocs = Integer.parseInt(conf.get("numDocs"));
-    }
-    
-    public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+    /*
+     * For each identical key (document), reduces the values (word=wordCount) into a sum (docSize) 
+     *
+     * Input:  ( document , (word=wordCount) )
+     * Output: ( (word@document) , (wordCount/docSize) )
+     *
+     * docSize = total number of words in the document
+     */
+    public static class DSReducer extends Reducer<Text, Text, Text, Text> {
 	
 	/************ YOUR CODE HERE ************/
-	 
-	//Put the output (key,value) pair into the tficfMap instead of doing a context.write
-	//tficfMap.put(/*document@word*/, /*TFICF*/);
-    }
-    
-    // sorts the output (key,value) pairs that are contained in the tficfMap
-    protected void cleanup(Context context) throws IOException, InterruptedException {
-	Map<Text, Text> sortedMap = new TreeMap<Text, Text>(tficfMap);
-	for (Text key : sortedMap.keySet()) {
-	    context.write(key, sortedMap.get(key));
+
+	public void reduce(Text key, Iterable<Text> values,Context context
+			   ) throws IOException, InterruptedException {
+
+	    int docSize = 0;
+	    List<String> inputs = new ArrayList<String>();
+	    for(Text value : values)
+		{
+		    inputs.add(value.toString());
+		    String count = value.toString().split("=")[1];
+		    docSize += Integer.parseInt(count);
+		    
+		}
+
+	    for(String word_input : inputs)
+		{
+		    String[] word_key = word_input.split("=");
+		    String current_word = word_key[0];
+		    String current_word_count = word_key[1];
+		    Text out_key = new Text(current_word + "@" + key);
+		    Text out_val = new Text(current_word_count + "/" + docSize);
+		    context.write( out_key, out_val);
+		}
+
 	}
+	
     }
     
-}
+    /*
+     * Rearranges the (key,value) pairs to have only the word as the key
+     * 
+     * Input:  ( (word@document) , (wordCount/docSize) )
+     * Output: ( word , (document=wordCount/docSize) )
+     */
+    public static class TFICFMapper extends Mapper<Object, Text, Text, Text> {
+
+	/************ YOUR CODE HERE ************/
+	
+    }
+
+    /*
+     * For each identical key (word), reduces the values (document=wordCount/docSize) into a 
+     * the final TFICF value (TFICF). Along the way, calculates the total number of documents and 
+     * the number of documents that contain the word.
+     * 
+     * Input:  ( word , (document=wordCount/docSize) )
+     * Output: ( (document@word) , TFICF )
+     *
+     * numDocs = total number of documents
+     * numDocsWithWord = number of documents containing word
+     * TFICF = ln(wordCount/docSize + 1) * ln(numDocs/numDocsWithWord +1)
+     *
+     * Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
+     *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
+     *       is highly inefficient!
+	  */
+    public static class TFICFReducer extends Reducer<Text, Text, Text, Text> {
+	
+	private static int numDocs;
+	private Map<Text, Text> tficfMap = new HashMap<>();
+	
+	// gets the numDocs value and stores it
+	protected void setup(Context context) throws IOException, InterruptedException {
+	    Configuration conf = context.getConfiguration();
+	    numDocs = Integer.parseInt(conf.get("numDocs"));
+	}
+	
+	public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+	    
+	    /************ YOUR CODE HERE ************/
+	     
+	    //Put the output (key,value) pair into the tficfMap instead of doing a context.write
+	    //tficfMap.put(/*document@word*/, /*TFICF*/);
+	}
+	
+	// sorts the output (key,value) pairs that are contained in the tficfMap
+	protected void cleanup(Context context) throws IOException, InterruptedException {
+            Map<Text, Text> sortedMap = new TreeMap<Text, Text>(tficfMap);
+	    for (Text key : sortedMap.keySet()) {
+                context.write(key, sortedMap.get(key));
+            }
+        }
+	
+    }
 }
