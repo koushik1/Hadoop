@@ -121,7 +121,7 @@ public class TFICF {
 	//Return final job code , e.g. retrun tficfJob.waitForCompletion(true) ? 0 : 1
 	/************ YOUR CODE HERE ************/
 	return job3.waitForCompletion(true) ? 0 : 1;
-	    }
+    }
     
     /*
      * Creates a (key,value) pair for every word in the document 
@@ -326,8 +326,8 @@ public class TFICF {
 		    Text out_key = new Text(vals[0]+'@'+key);
 		    int numerator = Integer.parseInt(vals[1]);
 		    int denominator = Integer.parseInt(vals[2]);
-		    double tfidfValue = Math.log(((double)numDocs/numDocsWithWord) + 1)*(((double)numerator/denominator) + 1);
-		    Text out_val = new Text( String.valueOf(tfidfValue) );
+		    double tficfValue = Math.log((double)((numDocs + 1)/(numDocsWithWord + 1)))*Math.log((double)(numerator/denominator) + 1);
+		    Text out_val = new Text( String.valueOf(tficfValue) );
 		    //Put the output (key,value) pair into the tficfMap instead of doing a context.write
 		    tficfMap.put(out_key,out_val);
 		}
