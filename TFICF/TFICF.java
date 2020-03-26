@@ -62,8 +62,8 @@ public class TFICF {
 	Path wcOutputPath = new Path("output" +index + "/WordCount");
 	Path dsInputPath = wcOutputPath;
 	Path dsOutputPath = new Path("output" + index + "/DocSize");
-	/*Path tficfInputPath = dsOutputPath;
-	  Path tficfOutputPath = new Path("output" + index + "/TFICF");*/
+	Path tficfInputPath = dsOutputPath;
+	Path tficfOutputPath = new Path("output" + index + "/TFICF");
 	
 	// Get/set the number of documents (to be used in the TFICF MapReduce job)
         FileSystem fs = path.getFileSystem(conf);
@@ -77,8 +77,8 @@ public class TFICF {
 	    hdfs.delete(wcOutputPath, true);
 	if (hdfs.exists(dsOutputPath))
 	    hdfs.delete(dsOutputPath, true);
-	/*iif (hdfs.exists(tficfOutputPath))
-	  hdfs.delete(tficfOutputPath, true);*/
+	if (hdfs.exists(tficfOutputPath))
+	    hdfs.delete(tficfOutputPath, true);
 	
 	// Create and execute Word Count job
 	
@@ -105,16 +105,23 @@ public class TFICF {
 	FileInputFormat.addInputPath(job2, dsInputPath);
 	FileOutputFormat.setOutputPath(job2, dsOutputPath);
 	job2.waitForCompletion(true);
-	return 0;
 	
 	//Create and execute TFICF job
 	
 	/************ YOUR CODE HERE ************/
+	Job job3 = Job.getInstance(conf, "TFICF");
+	job3.setJarByClass(TFICF.class);
+	job3.setMapperClass(TFICFMapper.class);
+	job3.setReducerClass(TFICFReducer.class);
+	job3.setOutputKeyClass(Text.class);
+	job3.setOutputValueClass(Text.class);
+	FileInputFormat.addInputPath(job3, tficfInputPath);
+	FileOutputFormat.setOutputPath(job3, tficfOutputPath);
 
 	//Return final job code , e.g. retrun tficfJob.waitForCompletion(true) ? 0 : 1
 	/************ YOUR CODE HERE ************/
-	
-    }
+	return job3.waitForCompletion(true) ? 0 : 1;
+	    }
     
     /*
      * Creates a (key,value) pair for every word in the document 
@@ -257,6 +264,23 @@ public class TFICF {
     public static class TFICFMapper extends Mapper<Object, Text, Text, Text> {
 
 	/************ YOUR CODE HERE ************/
+        private Text word_text = new Text();
+        private Text document_text = new Text();
+
+        public void map(Object key, Text value, Context context
+                        ) throws IOException, InterruptedException {
+	    
+	    
+	    String[] keys = value.toString().split("\\t");
+	    String word_doc = keys[0];
+	    String word_count_per_docSize = keys[1];
+	    String[] doc_key = word_doc.split("@");
+	    String current_word = doc_key[0];
+	    String document = doc_key[1];
+	    word_text.set(current_word);
+	    document_text.set(document + "=" + word_count_per_docSize);
+	    context.write(word_text, document_text);
+        }
 	
     }
 
@@ -275,7 +299,7 @@ public class TFICF {
      * Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
      *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
      *       is highly inefficient!
-	  */
+     */
     public static class TFICFReducer extends Reducer<Text, Text, Text, Text> {
 	
 	private static int numDocs;
@@ -290,9 +314,24 @@ public class TFICF {
 	public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 	    
 	    /************ YOUR CODE HERE ************/
-	     
-	    //Put the output (key,value) pair into the tficfMap instead of doing a context.write
-	    //tficfMap.put(/*document@word*/, /*TFICF*/);
+	    int numDocsWithWord = 0;
+	    List<String> inputs = new ArrayList<String>();
+	    for(Text value:values){
+		inputs.add(value.toString());
+		numDocsWithWord = numDocsWithWord + 1;
+	    }
+	    for(String word_input : inputs)
+		{
+		    String[] vals = word_input.split("[=/]");
+		    Text out_key = new Text(vals[0]+'@'+key);
+		    int numerator = Integer.parseInt(vals[1]);
+		    int denominator = Integer.parseInt(vals[2]);
+		    double tfidfValue = Math.log(((double)numDocs/numDocsWithWord) + 1)*(((double)numerator/denominator) + 1);
+		    Text out_val = new Text( String.valueOf(tfidfValue) );
+		    //Put the output (key,value) pair into the tficfMap instead of doing a context.write
+		    tficfMap.put(out_key,out_val);
+		}
+
 	}
 	
 	// sorts the output (key,value) pairs that are contained in the tficfMap
