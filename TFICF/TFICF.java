@@ -320,6 +320,7 @@ public class TFICF {
 		inputs.add(value.toString());
 		numDocsWithWord = numDocsWithWord + 1;
 	    }
+
 	    for(String word_input : inputs)
 		{
 		    String[] vals = word_input.split("[=/]");
