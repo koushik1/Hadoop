@@ -187,15 +187,22 @@ public class TFICF {
     public static class DSMapper extends Mapper<Object, Text, Text, Text> {
 	
 	/************ YOUR CODE HERE ************/
-	Text one = new Text("lol");
-        private Text word = new Text();
+        private Text document_text = new Text();
+        private Text word_text = new Text();
 
         public void map(Object key, Text value, Context context
                         ) throws IOException, InterruptedException {
 	    
-	    String current_word = value.toString();
-	    word.set(current_word);
-	    context.write(word, one);
+	    
+	    String[] keys = value.toString().split("\\t");
+	    String word_doc = keys[0];
+	    String word_count = keys[1];
+	    String[] doc_key = word_doc.split("@");
+	    String current_word = doc_key[0];
+	    String document = doc_key[1];
+	    document_text.set(document);
+	    word_text.set(current_word + "=" + word_count);
+	    context.write(document_text, word_text);
         }
 	
     }
@@ -214,8 +221,27 @@ public class TFICF {
 
 	public void reduce(Text key, Iterable<Text> values,Context context
 			   ) throws IOException, InterruptedException {
-	    Text x = new Text
-	    context.write(key, );
+
+	    int docSize = 0;
+	    List<String> inputs = new ArrayList<String>();
+	    for(Text value : values)
+		{
+		    System.
+		    inputs.add(value.toString());
+		    String count = value.toString().split("=")[1];
+		    docSize += Integer.parseInt(count);
+		}
+
+	    for(String word_input : inputs)
+		{
+		    String[] word_key = word_input.split("=");
+		    String current_word = word_key[0];
+		    String current_word_count = word_key[1];
+		    Text out_key = new Text(current_word + "@" + key);
+		    Text out_val = new Text(current_word_count + "/" + docSize);
+		    context.write( out_key, out_val);
+		}
+
 	}
 	
     }
@@ -246,8 +272,8 @@ public class TFICF {
      *
      * Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
      *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
-     *       is highly inefficient!
-     */
+	  *       is highly inefficient!
+	  */
     public static class TFICFReducer extends Reducer<Text, Text, Text, Text> {
 	
 	private static int numDocs;

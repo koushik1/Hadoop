@@ -194,19 +194,19 @@ public class TFICF {
         private Text document_text = new Text();
         private Text word_text = new Text();
 
-        public void map(Object key, Text value, Context context
+        public void map(Object key, Text inpText, Context con
                         ) throws IOException, InterruptedException {
 	    
 	    
-	    String[] keys = value.toString().split("\\t");
-	    String word_doc = keys[0];
-	    String word_count = keys[1];
-	    String[] doc_key = word_doc.split("@");
-	    String current_word = doc_key[0];
-	    String document = doc_key[1];
-	    document_text.set(document);
-	    word_text.set(current_word + "=" + word_count);
-	    context.write(document_text, word_text);
+	    String inpString = inpText.toString();
+	    //String docName = ((FileSplit) con.getInputSplit()).getPath().getName();
+	    String[] keys=inpString.split("\\t");
+	    if(keys.length==2){
+		String[] words = keys[0].split("\\@");
+		Text outputKey = new Text(words[1]);
+		Text outputValue = new Text(words[0]+"="+keys[1]);
+		con.write(outputKey, outputValue);
+	    }
         }
 	
     }
@@ -223,38 +223,27 @@ public class TFICF {
 	
 	/************ YOUR CODE HERE ************/
 
-	public void reduce(Text key, Iterable<Text> values,Context context
+	public void reduce(Text documentKey, Iterable<Text> values,Context con
 			   ) throws IOException, InterruptedException {
 
 	    int docSize = 0;
-	    List<String> inputs = new ArrayList<String>();
+	    List<String> inpVals = new ArrayList<String>();
 	    for(Text value : values)
 		{
-		    inputs.add(value.toString());
-		    try {
-			String count = value.toString().split("=")[1];
-			docSize += Integer.parseInt(count);
-
-		    }
-		    catch (Exception e) {
-			System.out.println(value);
-		    }
+		    inpVals.add(value.toString());
+		    //System.out.println(value);
+		    String[] vals = value.toString().split("=");
+		    docSize += Integer.parseInt(vals[1]);
 		}
 
-	    for(String word_input : inputs)
+	    for(String value : inpVals)
 		{
-		    try{
-			String[] word_key = word_input.toString().split("=");
-			String current_word = word_key[0];
-			String current_word_count = word_key[1];
-			Text out_key = new Text(current_word + "@" + key);
-			Text out_val = new Text(current_word_count + "/" + docSize);
-			context.write( out_key, out_val);
-		    }
-		    catch (Exception e) {
-			System.out.println(word_input);
-		    }
-
+		    String[] vals = value.split("=");
+		    int wordCount = Integer.parseInt(vals[1]);
+		    Text outputKey = new Text(vals[0]+'@'+documentKey);
+		    Text outputValue = new Text( (new Integer(wordCount)).toString()+'/'+(new Integer(docSize)).toString());
+		    //System.out.println(outputKey+","+outputValue);
+		    con.write(outputKey, outputValue);
 		}
 
 	}
@@ -284,11 +273,11 @@ public class TFICF {
      * numDocs = total number of documents
      * numDocsWithWord = number of documents containing word
      * TFICF = ln(wordCount/docSize + 1) * ln(numDocs/numDocsWithWord +1)
-	 *
-	* Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
-	    *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
-		 *       is highly inefficient!
-		 */
+     *
+     * Note: The output (key,value) pairs are sorted using TreeMap ONLY for grading purposes. For
+	 *       extremely large datasets, having a for loop iterate through all the (key,value) pairs 
+	      *       is highly inefficient!
+	      */
     public static class TFICFReducer extends Reducer<Text, Text, Text, Text> {
 	
 	private static int numDocs;
