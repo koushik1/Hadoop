@@ -327,10 +327,11 @@ public class TFICF {
 		    Text out_key = new Text(vals[0]+'@'+key);
 		    int numerator = Integer.parseInt(vals[1]);
 		    int denominator = Integer.parseInt(vals[2]);
+		    double TF = (double)numerator/denominator;
 		    int ICF_numerator = numDocs + 1;
 		    int ICF_denominator = numDocsWithWord + 1;
 
-		    double tficfValue = Math.log((double)ICF_numerator/ICF_denominator);//*Math.log((double)(numerator/denominator) + 1);
+		    double tficfValue = Math.log((double)ICF_numerator/ICF_denominator)*Math.log(TF + 1);
 		    Text out_val = new Text( String.valueOf(tficfValue) );
 		    //Put the output (key,value) pair into the tficfMap instead of doing a context.write
 		    tficfMap.put(out_key,out_val);
