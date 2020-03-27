@@ -141,15 +141,14 @@ public class TFICF {
         public void map(Object key, Text value, Context context
                         ) throws IOException, InterruptedException {
             StringTokenizer itr = new StringTokenizer(value.toString());
-            String fileName = ((FileSplit) context.getInputSplit()).getPath().getName(); //Get the document name
+            String fileName = ((FileSplit) context.getInputSplit()).getPath().getName();
 
-	    //Read the input word by word
             while (itr.hasMoreTokens()) {
                 String current_word = itr.nextToken();
                 current_word = current_word.toLowerCase().trim();
-                current_word = current_word.replaceAll("[^a-zA-Z0-9\\u0080-\\u9fff-\\[\\]`/]", ""); //Replace unwanter characters
+		current_word = current_word.replaceAll("[^a-zA-Z0-9hdfs dfs -put input1 /user/kshanka2/input1
+-\\[\\]`]", "");
 
-		//If string is not empty and begins with a letter
                 if (!current_word.isEmpty())
                     {
 			if ( current_word.charAt(0) >= 'a' && current_word.charAt(0) <= 'z' )
@@ -179,7 +178,6 @@ public class TFICF {
 
 	public void reduce(Text key, Iterable<IntWritable> values,Context context
 			   ) throws IOException, InterruptedException {
-	    //Sum to find th number of occurences
 	    int sum = 0;
 	    for (IntWritable val : values) {
 		sum += val.get();
@@ -206,13 +204,12 @@ public class TFICF {
                         ) throws IOException, InterruptedException {
 	    
 	    
-	    String[] keys = value.toString().split("\\t");//Split by tab space
+	    String[] keys = value.toString().split("\\t");
 	    String word_doc = keys[0];
 	    String word_count = keys[1];
-	    String[] doc_key = word_doc.split("@");//Split the original key by @
+	    String[] doc_key = word_doc.split("@");
 	    String current_word = doc_key[0];
 	    String document = doc_key[1];
-	    //Generate the new key and value pair
 	    document_text.set(document);
 	    word_text.set(current_word + "=" + word_count);
 	    context.write(document_text, word_text);
@@ -235,7 +232,6 @@ public class TFICF {
 	public void reduce(Text key, Iterable<Text> values,Context context
 			   ) throws IOException, InterruptedException {
 
-	    //Add the values for the given key to the list and also calculate the docSize
 	    int docSize = 0;
 	    List<String> inputs = new ArrayList<String>();
 	    for(Text value : values)
@@ -246,7 +242,6 @@ public class TFICF {
 		    
 		}
 
-	    //Iterate over each input in the list and generate the new key value pairs
 	    for(String word_input : inputs)
 		{
 		    String[] word_key = word_input.split("=");
@@ -277,13 +272,12 @@ public class TFICF {
                         ) throws IOException, InterruptedException {
 	    
 	    
-	    String[] keys = value.toString().split("\\t");//Split by tab
+	    String[] keys = value.toString().split("\\t");
 	    String word_doc = keys[0];
 	    String word_count_per_docSize = keys[1];
-	    String[] doc_key = word_doc.split("@");//Split the original key by alpha
+	    String[] doc_key = word_doc.split("@");
 	    String current_word = doc_key[0];
 	    String document = doc_key[1];
-	    //generate the new key value pairs
 	    word_text.set(current_word);
 	    document_text.set(document + "=" + word_count_per_docSize);
 	    context.write(word_text, document_text);
@@ -321,7 +315,6 @@ public class TFICF {
 	public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 	    
 	    /************ YOUR CODE HERE ************/
-	    // Add the values for the key to the list and also find the number of documents it appears in
 	    int numDocsWithWord = 0;
 	    List<String> inputs = new ArrayList<String>();
 	    for(Text value:values){
@@ -331,14 +324,14 @@ public class TFICF {
 
 	    for(String word_input : inputs)
 		{
-		    String[] vals = word_input.split("[=/]");//Split by = and then /
+		    String[] vals = word_input.split("[=/]");
 		    Text out_key = new Text(vals[0]+'@'+key);
 		    int numerator = Integer.parseInt(vals[1]);
 		    int denominator = Integer.parseInt(vals[2]);
-		    double TF = (double)numerator/denominator;//Calculate the term frequency
+		    double TF = (double)numerator/denominator;
 		    int ICF_numerator = numDocs + 1;
 		    int ICF_denominator = numDocsWithWord + 1;
-		    //Calculate the tficf value
+
 		    double tficfValue = Math.log((double)ICF_numerator/ICF_denominator)*Math.log(TF + 1);
 		    Text out_val = new Text( String.valueOf(tficfValue) );
 		    //Put the output (key,value) pair into the tficfMap instead of doing a context.write
