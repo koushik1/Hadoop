@@ -146,7 +146,7 @@ public class TFICF {
             while (itr.hasMoreTokens()) {
                 String current_word = itr.nextToken();
                 current_word = current_word.toLowerCase().trim();
-		current_word = current_word.replaceAll("[^a-zA-Z0-9-\\[\\]`]", "");
+		current_word = current_word.replaceAll("[^a-zA-Z0-9\\u0080-\\u9fff-\\[\\]`]", "");
 
                 if (!current_word.isEmpty())
                     {

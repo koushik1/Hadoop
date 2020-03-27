@@ -159,8 +159,8 @@ apologize@bruno-mars.txt	1
 appreciate@bruno-mars.txt	1
 approach@alicia-keys.txt	1
 approaching@jimi-hendrix.txt	1
-aqu@bruno-mars.txt	6
 aqua@jimi-hendrix.txt	1
+aquí@bruno-mars.txt	6
 arctic@jimi-hendrix.txt	2
 are@alicia-keys.txt	58
 are@bruno-mars.txt	106
@@ -181,7 +181,7 @@ around@jimi-hendrix.txt	37
 arrived@alicia-keys.txt	1
 arrows@jimi-hendrix.txt	2
 as@alicia-keys.txt	14
-as@bruno-mars.txt	18
+as@bruno-mars.txt	16
 as@jimi-hendrix.txt	35
 ashamed@bruno-mars.txt	1
 aside@jimi-hendrix.txt	1
@@ -196,6 +196,7 @@ asks@bruno-mars.txt	2
 asleep@bruno-mars.txt	3
 ass@bruno-mars.txt	5
 ass@jimi-hendrix.txt	1
+así@bruno-mars.txt	2
 at@alicia-keys.txt	63
 at@bruno-mars.txt	61
 at@jimi-hendrix.txt	32
@@ -918,7 +919,7 @@ cool@bruno-mars.txt	7
 cool@jimi-hendrix.txt	2
 cops@bruno-mars.txt	4
 copy@jimi-hendrix.txt	4
-corazn@alicia-keys.txt	1
+corazón@alicia-keys.txt	1
 corner@alicia-keys.txt	5
 corner@bruno-mars.txt	2
 cornflakes@jimi-hendrix.txt	1
@@ -1045,7 +1046,6 @@ darlin@jimi-hendrix.txt	3
 darling@alicia-keys.txt	10
 darling@bruno-mars.txt	12
 darling@jimi-hendrix.txt	8
-das@bruno-mars.txt	8
 date@alicia-keys.txt	1
 david@alicia-keys.txt	1
 dawn@alicia-keys.txt	1
@@ -1072,7 +1072,7 @@ death@alicia-keys.txt	3
 death@bruno-mars.txt	6
 death@jimi-hendrix.txt	2
 debe@bruno-mars.txt	2
-debera@bruno-mars.txt	2
+debería@bruno-mars.txt	2
 deceive@alicia-keys.txt	5
 decide@alicia-keys.txt	1
 decide@bruno-mars.txt	3
@@ -1133,7 +1133,6 @@ die@alicia-keys.txt	19
 die@bruno-mars.txt	5
 die@jimi-hendrix.txt	13
 died@alicia-keys.txt	1
-difcil@bruno-mars.txt	30
 difference@alicia-keys.txt	1
 difference@bruno-mars.txt	1
 different@alicia-keys.txt	6
@@ -1142,6 +1141,7 @@ different@jimi-hendrix.txt	3
 difficulties@alicia-keys.txt	2
 difficultiesunbreakable@alicia-keys.txt	1
 diffrent@jimi-hendrix.txt	1
+difícil@bruno-mars.txt	30
 dig@jimi-hendrix.txt	14
 diggin@jimi-hendrix.txt	1
 digging@bruno-mars.txt	3
@@ -1178,7 +1178,6 @@ divided@alicia-keys.txt	1
 divine@alicia-keys.txt	2
 dizzy@jimi-hendrix.txt	1
 dj@bruno-mars.txt	1
-dnde@bruno-mars.txt	16
 do@alicia-keys.txt	130
 do@bruno-mars.txt	171
 do@jimi-hendrix.txt	36
@@ -1208,10 +1207,11 @@ donde@bruno-mars.txt	6
 done@alicia-keys.txt	6
 done@bruno-mars.txt	20
 done@jimi-hendrix.txt	5
-dont@alicia-keys.txt	235
+dont@alicia-keys.txt	234
 dont@bruno-mars.txt	195
 dont@jimi-hendrix.txt	105
 donut@jimi-hendrix.txt	1
+donã¢t@alicia-keys.txt	1
 doo@jimi-hendrix.txt	2
 doomsday@jimi-hendrix.txt	1
 door@alicia-keys.txt	12
@@ -1306,6 +1306,7 @@ dusty@bruno-mars.txt	1
 dusty@jimi-hendrix.txt	2
 duty@jimi-hendrix.txt	1
 dyin@jimi-hendrix.txt	2
+días@bruno-mars.txt	8
 each@alicia-keys.txt	13
 each@bruno-mars.txt	10
 each@jimi-hendrix.txt	3
@@ -1391,7 +1392,6 @@ escape@jimi-hendrix.txt	1
 ese@alicia-keys.txt	4
 especially@jimi-hendrix.txt	2
 esperar@bruno-mars.txt	2
-est@bruno-mars.txt	20
 esta@bruno-mars.txt	28
 estado@bruno-mars.txt	2
 estallar@bruno-mars.txt	2
@@ -1404,8 +1404,9 @@ estoy@alicia-keys.txt	1
 estoy@bruno-mars.txt	52
 estrellas@alicia-keys.txt	1
 estribillo@bruno-mars.txt	6
-ests@bruno-mars.txt	26
 estuvieras@bruno-mars.txt	6
+está@bruno-mars.txt	20
+estás@bruno-mars.txt	24
 etc@jimi-hendrix.txt	2
 eternity@alicia-keys.txt	1
 eternity@bruno-mars.txt	2
@@ -1962,7 +1963,7 @@ gun@jimi-hendrix.txt	7
 gunny@jimi-hendrix.txt	1
 guns@jimi-hendrix.txt	2
 gunshot@bruno-mars.txt	1
-gustara@bruno-mars.txt	8
+gustaría@bruno-mars.txt	8
 guy@alicia-keys.txt	1
 guy@bruno-mars.txt	1
 guys@alicia-keys.txt	1
@@ -2333,7 +2334,7 @@ invent@jimi-hendrix.txt	1
 invisible@alicia-keys.txt	1
 invite@bruno-mars.txt	1
 invited@bruno-mars.txt	2
-inyeccin@bruno-mars.txt	2
+inyección@bruno-mars.txt	2
 is@alicia-keys.txt	199
 is@bruno-mars.txt	176
 is@jimi-hendrix.txt	97
@@ -2777,7 +2778,6 @@ lugar@alicia-keys.txt	2
 lyin@jimi-hendrix.txt	2
 lying@alicia-keys.txt	3
 lyrics@bruno-mars.txt	1
-m@bruno-mars.txt	10
 ma@bruno-mars.txt	3
 machine@jimi-hendrix.txt	8
 mad@alicia-keys.txt	5
@@ -3050,8 +3050,6 @@ movin@bruno-mars.txt	1
 moving@alicia-keys.txt	1
 moving@bruno-mars.txt	2
 mrs@alicia-keys.txt	1
-ms@bruno-mars.txt	2
-msica@alicia-keys.txt	2
 mtv@bruno-mars.txt	1
 much@alicia-keys.txt	19
 much@bruno-mars.txt	12
@@ -3077,6 +3075,9 @@ my@jimi-hendrix.txt	233
 myself@alicia-keys.txt	8
 myself@bruno-mars.txt	15
 myself@jimi-hendrix.txt	2
+más@bruno-mars.txt	2
+mí@bruno-mars.txt	10
+música@alicia-keys.txt	2
 n-no@jimi-hendrix.txt	1
 n@jimi-hendrix.txt	2
 na@alicia-keys.txt	12
@@ -3138,7 +3139,6 @@ nibble@jimi-hendrix.txt	1
 nice@bruno-mars.txt	5
 nice@jimi-hendrix.txt	1
 nick@alicia-keys.txt	2
-nico@bruno-mars.txt	2
 niggaz@alicia-keys.txt	1
 night@alicia-keys.txt	35
 night@bruno-mars.txt	73
@@ -3287,7 +3287,6 @@ orange@jimi-hendrix.txt	1
 oreja@alicia-keys.txt	1
 organize@jimi-hendrix.txt	1
 orleans@jimi-hendrix.txt	1
-orme@bruno-mars.txt	6
 other@alicia-keys.txt	28
 other@bruno-mars.txt	23
 other@jimi-hendrix.txt	7
@@ -3326,6 +3325,7 @@ own@alicia-keys.txt	3
 own@bruno-mars.txt	20
 own@jimi-hendrix.txt	9
 oww@jimi-hendrix.txt	3
+oírme@bruno-mars.txt	6
 p90x@bruno-mars.txt	1
 pack@bruno-mars.txt	1
 pages@alicia-keys.txt	3
@@ -3478,8 +3478,8 @@ plowman@jimi-hendrix.txt	1
 pocket@alicia-keys.txt	4
 pocket@bruno-mars.txt	4
 pocketful@alicia-keys.txt	6
-poda@bruno-mars.txt	2
-podra@bruno-mars.txt	2
+podría@bruno-mars.txt	2
+podía@bruno-mars.txt	2
 poet@alicia-keys.txt	7
 poetry@alicia-keys.txt	1
 point@bruno-mars.txt	1
@@ -3586,7 +3586,6 @@ prove@bruno-mars.txt	1
 prove@jimi-hendrix.txt	2
 proves@bruno-mars.txt	1
 ps@alicia-keys.txt	1
-puedes@bruno-mars.txt	6
 puedo@bruno-mars.txt	6
 puerto@bruno-mars.txt	2
 pull@bruno-mars.txt	2
@@ -3607,7 +3606,6 @@ pushing@jimi-hendrix.txt	2
 put@alicia-keys.txt	34
 put@bruno-mars.txt	42
 put@jimi-hendrix.txt	13
-qu@bruno-mars.txt	4
 que@alicia-keys.txt	1
 que@bruno-mars.txt	66
 quedando@bruno-mars.txt	2
@@ -3621,12 +3619,13 @@ quick@jimi-hendrix.txt	1
 quickly@bruno-mars.txt	1
 quiero@bruno-mars.txt	4
 quietly@jimi-hendrix.txt	1
-quin@alicia-keys.txt	1
 quit@alicia-keys.txt	1
 quit@bruno-mars.txt	1
 quite@bruno-mars.txt	2
 quite@jimi-hendrix.txt	1
 quiting@bruno-mars.txt	1
+quién@alicia-keys.txt	1
+qué@bruno-mars.txt	2
 ra-a-a-ain@bruno-mars.txt	3
 ra@alicia-keys.txt	1
 race@jimi-hendrix.txt	1
@@ -4180,8 +4179,6 @@ slide@bruno-mars.txt	4
 slip@bruno-mars.txt	1
 slips@alicia-keys.txt	1
 slips@jimi-hendrix.txt	1
-slo@alicia-keys.txt	4
-slo@bruno-mars.txt	2
 slow@alicia-keys.txt	1
 slow@bruno-mars.txt	25
 slow@jimi-hendrix.txt	4
@@ -4532,7 +4529,9 @@ swell@jimi-hendrix.txt	1
 swimin@jimi-hendrix.txt	1
 swimming@bruno-mars.txt	3
 swung@jimi-hendrix.txt	1
-t@alicia-keys.txt	9
+sólo@alicia-keys.txt	4
+sólo@bruno-mars.txt	2
+t@alicia-keys.txt	1
 table@alicia-keys.txt	4
 table@bruno-mars.txt	4
 tail@bruno-mars.txt	2
@@ -4922,6 +4921,7 @@ two@alicia-keys.txt	4
 two@bruno-mars.txt	12
 two@jimi-hendrix.txt	9
 type@alicia-keys.txt	2
+tú@alicia-keys.txt	8
 u@alicia-keys.txt	2
 ugly@bruno-mars.txt	1
 uh-ha@jimi-hendrix.txt	1
@@ -5367,7 +5367,7 @@ x3@bruno-mars.txt	1
 x3@jimi-hendrix.txt	1
 x5@jimi-hendrix.txt	1
 y@alicia-keys.txt	2
-y@bruno-mars.txt	26
+y@bruno-mars.txt	24
 ya@alicia-keys.txt	10
 ya@bruno-mars.txt	45
 ya@jimi-hendrix.txt	16
