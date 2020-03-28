@@ -97,3 +97,31 @@ Expecting respectively: -63; 1455479653; 0; CID-61a4c15c-eda0-450d-b87a-a4a7130e
 	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
 	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
 	at java.lang.Thread.run(Thread.java:745)
+2020-03-27 21:07:39,338 ERROR [SecondaryNameNode Status
+Name Node Address      : c20/10.4.1.21:9000
+Start Time             : Fri Mar 27 21:05:36 EDT 2020
+Last Checkpoint        : -- seconds ago
+Checkpoint Period      : 3600 seconds
+Checkpoint Transactions: 1000000
+Checkpoint Dirs        : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]
+Checkpoint Edits Dirs  : [file:///tmp/hadoop-kshanka2/dfs/namesecondary]] namenode.SecondaryNameNode (SecondaryNameNode.java:doWork(399)) - Exception in doCheckpoint
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -63 namespaceID = 105164578 cTime = 0 ; clusterId = CID-954d51e2-4dbc-46a9-9eea-8165417edc11 ; blockpoolId = BP-1724750353-10.4.1.21-1585357521436.
+Expecting respectively: -63; 1455479653; 0; CID-61a4c15c-eda0-450d-b87a-a4a7130eabcb; BP-922545317-10.4.1.21-1585140862513.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -63 namespaceID = 105164578 cTime = 0 ; clusterId = CID-954d51e2-4dbc-46a9-9eea-8165417edc11 ; blockpoolId = BP-1724750353-10.4.1.21-1585357521436.
+Expecting respectively: -63; 1455479653; 0; CID-61a4c15c-eda0-450d-b87a-a4a7130eabcb; BP-922545317-10.4.1.21-1585140862513.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:415)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
