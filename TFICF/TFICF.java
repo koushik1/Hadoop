@@ -237,19 +237,19 @@ public class TFICF {
 
 	    //Add the values for the given key to the list and also calculate the docSize
 	    int docSize = 0;
-	    List<String> inputs = new ArrayList<String>();
+	    Map<Text, Text> inputs = new HashMap<>();
 	    for(Text value : values)
 		{
-		    inputs.add(value.toString());
+		    inputs.put(key,value);
 		    String count = value.toString().split("=")[1];
 		    docSize += Integer.parseInt(count);
 		    
 		}
 
 	    //Iterate over each input in the list and generate the new key value pairs
-	    for(String word_input : inputs)
+	    for(Map.Entry m:inputs.entrySet())
 		{
-		    String[] word_key = word_input.split("=");
+		    String[] word_key = m.getValue().toString().split("=");
 		    String current_word = word_key[0];
 		    String current_word_count = word_key[1];
 		    Text out_key = new Text(current_word + "@" + key);
